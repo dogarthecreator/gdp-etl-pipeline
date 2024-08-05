@@ -29,7 +29,6 @@ def extract(url, table_attribs):
     information from the website and savses it to a dataframe. The
     function returns the dataframe for further processing. '''
 
-    log_progress('Starting data extraction')
     #Retreiving the Data from Website
     page = requests.get(url).text
     data = BeautifulSoup(page,'html.parser')
@@ -63,7 +62,6 @@ def transform(df):
     df['GDP_USD_millions'] = df['GDP_USD_millions'].astype(float)
     df['GDP_USD_millions'] = np.round(df['GDP_USD_millions']/1000,2)
     df = df.rename(columns = {"GDP_USD_millions":"GDP_USD_billions"})
-    log_progress("Tranformation Complete")
     return df
     
 
@@ -72,14 +70,11 @@ def load_to_csv(df, csv_path):
     in the provided path. Function returns nothing.'''
     log_progress(f'Starting to load data to CSV: {csv_path}')
     df.to_csv(csv_path,index = False)
-    log_progress('Data loading to CSV completed')
 
 def load_to_db(df, sql_connection, table_name):
     ''' This function saves the final dataframe as a database table
     with the provided name. Function returns nothing.'''
-    log_progress(f'Starting to load data to database table: {table_name}')
     df.to_sql(table_name,sql_connection,if_exists='replace',index = False)
-    log_progress('Data loading to database completed')
 
 
 def run_query(query_statement, sql_connection):
