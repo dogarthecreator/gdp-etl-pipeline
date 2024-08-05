@@ -1,0 +1,13 @@
+2024-Aug-05-20:13:09 : Preliminaries complete. Initiating ETL process
+2024-Aug-05-20:13:09 : Starting data extraction
+2024-Aug-05-20:13:11 : Data extraction complete. Initiating Transformation process
+2024-Aug-05-20:13:11 : Tranformation Complete
+2024-Aug-05-20:13:11 : Data transformation complete. Initiating loading process
+2024-Aug-05-20:13:11 : Starting to load data to CSV: ./Countries_by_GDP.csv
+2024-Aug-05-20:13:11 : Data loading to CSV completed
+2024-Aug-05-20:13:11 : Data saved to CSV file
+2024-Aug-05-20:13:11 : SQL Connection initiated.
+2024-Aug-05-20:13:11 : Starting to load data to database table: Countries_by_GDP
+2024-Aug-05-20:13:11 : Data loading to database completed
+2024-Aug-05-20:13:11 : Data loaded to Database as table. Running the query
+2024-Aug-05-20:13:11 : Process Complete.
